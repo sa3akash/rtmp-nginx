@@ -139,9 +139,9 @@ rtmp {
 
         application live {
             live on;
-            on_publish http://$SERVER_URL/api/v1/stream/authenticate?name=$name&client_ip=$remote_addr;
-            on_record_done http://$SERVER_URL/api/v1/stream/recorded?name=$name;
-            on_publish_done http://$SERVER_URL/api/v1/stream/cleanup?name=$name;
+            on_publish http://$SERVER_URL/authenticate?name=$name&client_ip=$remote_addr;
+            on_record_done http://$SERVER_URL/recorded?name=$name;
+            on_publish_done http://$SERVER_URL/cleanup?name=$name;
 
             # Enable recording
             record all;
@@ -183,7 +183,7 @@ You can set the environment variables when you run your NGINX container. Here’
 docker run -d \
   --name nginx-rtmp \
   -e RTMP_PORT=1935 \
-  -e SERVER_URL=192.168.1.175:5500 \
+  -e SERVER_URL=192.168.1.175:5500/api/v1/stream \
   -v /opt/data:/opt/data \
   -p 1935:1935 \
   nginx-rtmp
