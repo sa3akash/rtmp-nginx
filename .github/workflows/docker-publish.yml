@@ -29,7 +29,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: apps/api/Dockerfile
+        file: Dockerfile
         push: true
         tags: |
           sa2avroo/sa2avroo/nginx-rtmp:latest
@@ -40,7 +40,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: apps/api/Dockerfile.server
+        file: Dockerfile.server
         push: true
         tags: |
           sa2avroo/sa2avroo/nginx-rtmp-custom-server:latest
