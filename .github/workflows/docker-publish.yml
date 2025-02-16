@@ -32,9 +32,9 @@ jobs:
         file: Dockerfile
         push: true
         tags: |
-          sa2avroo/sa2avroo/nginx-rtmp:latest
-          sa2avroo/sa2avroo/nginx-rtmp:${{ github.sha }}
-          sa2avroo/sa2avroo/nginx-rtmp:${{ github.ref_name }}
+          sa2avroo/nginx-rtmp:latest
+          sa2avroo/nginx-rtmp:${{ github.sha }}
+          sa2avroo/nginx-rtmp:${{ github.ref_name }}
 
     - name: Build and push Custom SERVER API Docker image
       uses: docker/build-push-action@v3
@@ -43,9 +43,9 @@ jobs:
         file: Dockerfile.server
         push: true
         tags: |
-          sa2avroo/sa2avroo/nginx-rtmp-custom-server:latest
-          sa2avroo/sa2avroo/nginx-rtmp-custom-server:${{ github.sha }}
-          sa2avroo/sa2avroo/nginx-rtmp-custom-server:${{ github.ref_name }}
+          sa2avroo/nginx-rtmp-custom-server:latest
+          sa2avroo/nginx-rtmp-custom-server:${{ github.sha }}
+          sa2avroo/nginx-rtmp-custom-server:${{ github.ref_name }}
 
     - name: Logout from Docker Hub
       run: docker logout
