@@ -1,6 +1,6 @@
-ARG NGINX_VERSION=1.23.1
+ARG NGINX_VERSION=1.26.3
 ARG NGINX_RTMP_VERSION=1.2.2
-ARG FFMPEG_VERSION=5.1
+ARG FFMPEG_VERSION=7.1
 
 ##############################
 # Build the NGINX-build image.
@@ -132,7 +132,7 @@ RUN rm -rf /var/cache/* /tmp/*
 ##########################
 # Build the release image.
 FROM alpine:3.16.1
-LABEL MAINTAINER SHAKIL AHMED <sa3akash@gmail.com>
+LABEL MAINTAINER "SHAKIL AHMED <sa3akash@gmail.com>"
 
 # Set default ports.
 ENV HTTP_PORT 80
